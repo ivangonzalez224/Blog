@@ -82,7 +82,7 @@ Follow the steps:
 
 1. Open your terminal
 2. Navigate to your folder
-3. Satrt the server (rails s)
+3. Start the server (rails s)
 ```sh
    rails s
 ```
