@@ -13,5 +13,10 @@ RSpec.describe User, type: :model do
     user = User.new(photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
     expect(user).to_not be_valid
   end
+
+  it 'is invalid with a negative posts_counter' do
+    user = User.new(name: 'Jim', posts_counter: -1)
+    expect(user).to_not be_valid
+  end
   
 end
