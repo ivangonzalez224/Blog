@@ -19,4 +19,8 @@ RSpec.describe User, type: :model do
     expect(user).to_not be_valid
   end
   
+  it 'is invalid with a non-integer posts_counter' do
+    user = User.new(name: 'Jim', posts_counter: 2.1)
+    expect(user).to_not be_valid
+  end
 end
