@@ -14,7 +14,7 @@ RSpec.describe Like, type: :model do
       post = Post.create(user: user, title: 'Test Post', comments_counter: 0, likes_counter: 0)
 
       like = Like.new(post: post, user: user)
-      like.save # Save the like, which should trigger the private method
+      like.save
 
       post.reload
 

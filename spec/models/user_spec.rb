@@ -34,10 +34,8 @@ RSpec.describe User, type: :model do
       post3 = Post.create(user: user, title: 'Post 3', text: 'Content 3', created_at: 2.days.ago)
       post4 = Post.create(user: user, title: 'Post 4', text: 'Content 4', created_at: 1.day.ago)
 
-      # Call the three_most_recent_post method
       most_recent_posts = user.three_most_recent_post
 
-      # Expect the method to return the most recent posts (limited to 3)
       expect(most_recent_posts).to eq([post4, post3, post2])
     end
   end
