@@ -3,6 +3,8 @@ class Post < ApplicationRecord
   has_many :comments
   has_many :likes
 
+  validates :title, presence: true, length: { maximun: 250 }
+
   after_save :update_user_post_counter
 
   def five_most_recent_comments
