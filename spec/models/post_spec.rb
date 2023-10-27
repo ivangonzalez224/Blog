@@ -54,4 +54,21 @@ RSpec.describe Post, type: :model do
       end.to change(user, :posts_counter).by(1)
     end
   end
+
+  describe '#five_most_recent_comments' do
+    it 'returns the five most recent comments' do
+      user = User.create(name: 'Joe')
+      post = Post.create(user: user, title: 'Post for testing', text: 'Test content')
+
+      # Create 5 comments for the user
+      comment1 = Comment.create(text: 'Comment1 for testing', post: post, user: user)
+      comment2 = Comment.create(text: 'Comment2 for testing', post: post, user: user)
+      comment3 = Comment.create(text: 'Comment3 for testing', post: post, user: user)
+      comment4 = Comment.create(text: 'Comment4 for testing', post: post, user: user)
+      comment5 = Comment.create(text: 'Comment5 for testing', post: post, user: user)
+      most_recent_comments = post.five_most_recent_comments
+
+      expect(most_recent_comments).to eq([comment5, comment4, comment3, comment2, comment1])
+    end
+  end
 end
