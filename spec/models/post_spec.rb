@@ -25,6 +25,18 @@ RSpec.describe Post, type: :model do
     expect(post).to_not be_valid
   end
 
+  it 'is invalid with a non-integer comments_counter' do
+    user = User.create(name: 'Tom', posts_counter: 0)
+    post = Post.new(user: user, title: 'Post for testing', comments_counter: 2.5, likes_counter: 0)
+    expect(post).to_not be_valid
+  end
+
+  it 'is invalid with a likes_counter less than zero' do
+    user = User.create(name: 'Tom', posts_counter: 0)
+    post = Post.new(user: user, title: 'Post for testing', comments_counter: 0, likes_counter: -1)
+    expect(post).to_not be_valid
+  end
+
   it 'is invalid with a non-integer likes_counter' do
     user = User.create(name: 'Tom', posts_counter: 0)
     post = Post.new(user: user, title: 'Post for testing', comments_counter: 0, likes_counter: 1.5)
