@@ -32,8 +32,8 @@ RSpec.describe 'UsersControllers', type: :request do
 
   describe 'GET /users' do
     it 'includes the correct placeholder in the response body' do
-        get '/users'
-        expect(response.body).to include('Here is a list of all users')
-      end
+      get '/users'
+      expect(response.body).to include('Here is a list of all users')
+    end
   end
 end
