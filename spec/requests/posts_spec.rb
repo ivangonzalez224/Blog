@@ -9,4 +9,14 @@ RSpec.describe 'PostsController', type: :request do
       expect(response).to have_http_status(200)
     end
   end
+
+  describe 'GET #index' do
+    let(:user) { User.create(name: 'Tim', photo: 'Test photo', bio: 'Test bio') }
+    let(:post) { Post.create(user: user, title: 'Post for testing') }
+
+    it 'returns a successful status response' do
+      get "/users/#{user.id}/posts"
+      expect(response).to have_http_status(200)
+    end
+  end
 end

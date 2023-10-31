@@ -9,7 +9,7 @@ RSpec.describe 'UsersControllers', type: :request do
   end
 
   describe 'GET /users' do
-    it 'returns a error response' do
+    it 'returns an error response' do
       get '/failed_path'
       expect(response).to have_http_status(404)
     end
