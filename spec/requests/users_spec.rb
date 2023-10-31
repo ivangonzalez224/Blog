@@ -46,8 +46,13 @@ RSpec.describe 'UsersControllers', type: :request do
     end
 
     it 'includes the placeholder correctly in the response body for a specific user' do
-        get "/users/#{user.id}"
-        expect(response.body).to include('This is the user profile')
-      end
+      get "/users/#{user.id}"
+      expect(response.body).to include('This is the user profile')
+    end
+
+    it 'does not include the placeholder correctly in the response body for a specific user' do
+      get "/users/#{user.id}"
+      expect(response.body).not_to include('Not included test placeholder')
+    end
   end
 end
