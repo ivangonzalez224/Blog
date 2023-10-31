@@ -23,5 +23,10 @@ RSpec.describe 'PostsController', type: :request do
       get "/users/#{user.id}/posts"
       expect(response.body).to include('Here is a list of posts for a given user')
     end
+
+    it 'does not include the placeholder correctly in the response body for a all post for a given user' do
+      get "/users/#{user.id}/posts"
+      expect(response.body).not_to include('No include placeholder')
+    end
   end
 end
