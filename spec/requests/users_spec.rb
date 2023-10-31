@@ -36,4 +36,13 @@ RSpec.describe 'UsersControllers', type: :request do
       expect(response.body).to include('Here is a list of all users')
     end
   end
+
+  describe 'GET /users/:id' do
+    let(:user) { User.create(name: 'Sam', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Developer from Peru.') }
+
+    it 'returns a successful response for a specific user' do
+      get "/users/#{user.id}"
+      expect(response).to have_http_status(200)
+    end
+  end
 end
