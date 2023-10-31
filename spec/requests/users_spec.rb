@@ -9,7 +9,7 @@ RSpec.describe 'UsersControllers', type: :request do
   end
 
   describe 'GET /users' do
-    it 'returns a successful response' do
+    it 'returns a error response' do
       get '/failed_path'
       expect(response).to have_http_status(404)
     end
@@ -28,5 +28,12 @@ RSpec.describe 'UsersControllers', type: :request do
       get user_path(user)
       expect(response).to be_successful
     end
+  end
+
+  describe 'GET /users' do
+    it 'includes the correct placeholder in the response body' do
+        get '/users'
+        expect(response.body).to include('Here is a list of all users')
+      end
   end
 end
