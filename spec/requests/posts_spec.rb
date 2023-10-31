@@ -26,7 +26,16 @@ RSpec.describe 'PostsController', type: :request do
 
     it 'does not include the placeholder correctly in the response body for a all post for a given user' do
       get "/users/#{user.id}/posts"
-      expect(response.body).not_to include('No include placeholder')
+      expect(response.body).not_to include('Not included test placeholder')
+    end
+  end
+
+  describe 'GET #show' do
+    let(:user) { User.create(name: 'Jim', photo: 'Test photo', bio: 'Test bio') }
+    let(:post) { Post.create(user: user, title: 'Post for testing') }
+    it 'renders the correct view' do
+      get "/users/#{user.id}/posts/#{post.id}"
+      expect(response.body).to include('Here are the details for a specific post')
     end
   end
 end
