@@ -44,5 +44,10 @@ RSpec.describe 'UsersControllers', type: :request do
       get "/users/#{user.id}"
       expect(response).to have_http_status(200)
     end
+
+    it 'includes the placeholder correctly in the response body for a specific user' do
+        get "/users/#{user.id}"
+        expect(response.body).to include('This is the user profile')
+      end
   end
 end
