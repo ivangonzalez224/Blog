@@ -14,4 +14,12 @@ RSpec.describe 'UsersControllers', type: :request do
       expect(response).to be_successful
     end
   end
+
+  describe 'GET #show' do
+    it 'returns a successful response for the show action' do
+      user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
+      get user_path(user)
+      expect(response).to be_successful
+    end
+  end
 end
