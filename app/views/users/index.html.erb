@@ -1,1 +1,23 @@
-<h1>Here is a list of all users</h1>
+<head>
+  <link rel="stylesheet" href="/assets/stylesheets/users.css">
+</head>
+<body>
+    <h1>Here is a list of all users</h1>
+    <div class="users-mainContainer">
+      <div class="user-list">
+        <% @users.each do |user| %>
+          <div class="user-item">
+            <div class="user-image">
+              <%= image_tag user.photo, alt: "User photo" %>
+            </div>
+            <div class="user-details">
+              <span id="userName"><%= link_to user.name, user %></span>
+              <div id="userPostContainer">
+                <span class="user-post-count">Number of posts: <%= user.posts.count %></span>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>    
+ </body>   
