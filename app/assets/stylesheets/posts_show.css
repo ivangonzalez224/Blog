@@ -40,3 +40,12 @@
   border: 3px solid #000;
   padding: 1%;
 }
+
+.add-new-btn{
+  background-color: rgb(87, 128, 191);
+  color: #fff;
+  padding: 2% 4%;
+  margin-top: 3%;
+  border-radius: 9px;
+  text-decoration: none;
+}
