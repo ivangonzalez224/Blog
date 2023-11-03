@@ -39,6 +39,12 @@ h1 {
   background-color: #fff;
 }
 
+.newPostBtn {
+  text-align: center;
+  width: 20%;
+  margin-bottom: 3%;
+}
+
 .posts-list-container {
   display: flex;
   flex-direction: column;

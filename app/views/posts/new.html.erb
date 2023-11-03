@@ -1,0 +1,26 @@
+<head>
+  <link rel="stylesheet" href="/assets/stylesheets/new_posts.css">
+</head>
+<body>
+  <div class="newCommnet-container">
+    <h2>Add New Post</h2>
+    <%= form_with(model: [@user, @post], url: user_posts_path(@user), class: 'post-form') do |form| %>
+      <div class="comment-area">
+        <%= form.label :title, "Title", class: "label-top" %>
+        <%= form.text_field :title, placeholder: "Add a title" %>
+      </div>
+
+      <div class="comment-area">
+        <%= form.label :text, "Message" %>
+        <%= form.text_area :text, rows: 5, placeholder: "Add a message" %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit 'Create Post', class: 'add-new-btn' %>
+      </div>
+    <% end %>
+    <div id="backContainer">
+      <%= link_to '< Back', user_posts_path(@user), class: 'back-btn' %>
+    </div>
+  </div>
+</body>

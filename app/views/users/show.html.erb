@@ -25,12 +25,13 @@
             <span class="post-title"><%= post.title %></span>
             <p class="post-text"><%= post.text %></p>
             <div class="post-details">
-              <span class="post-detail">Comments:
-                <%= post.comments.count %>
-              </span>
-              <span id="post-detail">, Likes:
-                <%= post.likes.count %>
-              </span>
+              <div class="post-show-action">
+                <span class="post-detail">Comments:
+                  <%= post.comments.count %>
+                </span>
+                <span class="post-detail" data-target="likes_count">, Likes: <%= post.likes.count %></span>
+              </div> 
+              <%= button_to "Like", user_post_likes_path(@user, post), method: :post, class: "like-btn", remote: true %>
             </div>
           </div>
         <% end %>
