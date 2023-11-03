@@ -73,7 +73,24 @@ img {
 .post-details {
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.post-show-action {
+  display: flex;
+  margin-bottom: 2%;
+}
+
+.like-btn {
+  background-color: rgb(43, 164, 134);
+  color: #fff;
+  border: none;
+  padding: 1% 3%;
+  border-radius: 9px;
+  width: fit-content;
+  align-self: flex-end;
 }
 
 .post-btn-container {
