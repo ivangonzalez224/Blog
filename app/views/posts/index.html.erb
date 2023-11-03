@@ -16,7 +16,7 @@
         </div>
       </div>
       <div class="posts-list-container">
-        <%= link_to 'New Post', new_user_post_path(@user), class: 'button' %>
+        <%= link_to 'Add New Post', new_user_post_path(@user), class: 'add-new-btn newPostBtn' %>
         <% @posts.each do |post| %>
           <div class="post-itemContainer">
             <div class="post-content">

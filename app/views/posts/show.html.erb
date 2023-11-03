@@ -1,5 +1,8 @@
 <h1>Here are the details for a specific post</h1>
 <body>
+  <div id="backContainer">
+    <%= link_to '< Back', user_posts_path(@user), class: 'back-btn backCommentBtn' %>
+  </div>
   <div class="post-show-container">
     <div class="postUser-Content">
       <div class="postUser">
