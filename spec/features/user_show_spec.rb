@@ -16,4 +16,13 @@ RSpec.describe 'User Show Page', type: :feature do
 
     expect(page).to have_content('Number of posts: 1')
   end
+
+  it 'displays the username' do
+    user = User.create(name: 'Jim', bio: 'Student', photo: 'https://i.blogs.es/d4590b/screenshot_113/1366_2000.jpeg')
+    Post.create(title: 'Post title for testing', text: 'Post Text for testing', user: user)
+
+    visit user_path(user)
+
+    expect(page).to have_content('Jim')
+  end
 end
