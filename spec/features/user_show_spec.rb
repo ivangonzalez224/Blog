@@ -33,4 +33,12 @@ RSpec.describe 'User Show Page', type: :feature do
     visit user_path(user)
     expect(page).not_to have_content('incorrect name')
   end
+
+  it 'displays the correct user bio' do
+    user = User.create(name: 'Jim', bio: 'Student', photo: 'https://i.blogs.es/d4590b/screenshot_113/1366_2000.jpeg')
+    Post.create(title: 'Post title for testing', text: 'Post Text for testing', user: user)
+
+    visit user_path(user)
+    expect(page).to have_content('Student')
+  end
 end
