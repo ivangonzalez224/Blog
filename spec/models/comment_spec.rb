@@ -18,7 +18,8 @@ RSpec.describe Comment, type: :model do
   describe '#update_comments_counter' do
     it 'updates comments_counter when a comment is saved' do
       user = User.create(name: 'Jim')
-      post = Post.create(user: user, title: 'Test Post', comments_counter: 0, likes_counter: 0)
+      post = Post.create(user: user, title: 'Test Post', text: 'Post text for testing', comments_counter: 0,
+                         likes_counter: 0)
 
       comment = Comment.new(text: 'Comment for test', post: post, user: user)
       expect do
