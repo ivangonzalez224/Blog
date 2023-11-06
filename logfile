@@ -1,0 +1,33 @@
+2023-11-04 14:42:06.566 -05 [2369] LOG:  starting PostgreSQL 14.9 (Homebrew) on x86_64-apple-darwin17.7.0, compiled by Apple LLVM version 10.0.0 (clang-1000.10.44.4), 64-bit
+2023-11-04 14:42:06.567 -05 [2369] LOG:  listening on IPv6 address "::1", port 5432
+2023-11-04 14:42:06.567 -05 [2369] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2023-11-04 14:42:06.568 -05 [2369] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2023-11-04 14:42:06.573 -05 [2370] LOG:  database system was shut down at 2023-11-04 14:41:47 -05
+2023-11-04 14:42:06.580 -05 [2369] LOG:  database system is ready to accept connections
+2023-11-04 14:45:55.983 -05 [3544] FATAL:  role "blogapp" does not exist
+2023-11-04 14:45:56.088 -05 [3545] FATAL:  role "blogapp" does not exist
+2023-11-04 14:45:57.355 -05 [3549] FATAL:  role "blogapp" does not exist
+2023-11-04 14:45:57.465 -05 [3550] FATAL:  role "blogapp" does not exist
+2023-11-04 14:53:19.108 -05 [3915] FATAL:  role "blogapp" does not exist
+2023-11-04 14:53:19.216 -05 [3916] FATAL:  role "blogapp" does not exist
+2023-11-04 14:53:48.765 -05 [3939] FATAL:  role "blogapp" does not exist
+2023-11-04 14:53:48.874 -05 [3940] FATAL:  role "blogapp" does not exist
+2023-11-04 14:57:02.316 -05 [3984] FATAL:  role "blogapp" does not exist
+2023-11-04 14:57:02.423 -05 [3985] FATAL:  role "blogapp" does not exist
+2023-11-04 14:57:26.458 -05 [4012] FATAL:  role "blogapp" does not exist
+2023-11-04 14:57:26.566 -05 [4013] FATAL:  role "blogapp" does not exist
+2023-11-04 14:58:34.388 -05 [4027] FATAL:  role "blogapp" does not exist
+2023-11-04 14:58:34.497 -05 [4028] FATAL:  role "blogapp" does not exist
+2023-11-04 15:00:02.885 -05 [4053] FATAL:  role "blogapp" does not exist
+2023-11-04 15:00:02.995 -05 [4054] FATAL:  role "blogapp" does not exist
+2023-11-04 15:04:04.957 -05 [5714] ERROR:  syntax error at or near "ivanblogapp" at character 1
+2023-11-04 15:04:04.957 -05 [5714] STATEMENT:  ivanblogapp
+	;
+2023-11-04 15:04:18.064 -05 [5714] ERROR:  syntax error at or near "cd" at character 1
+2023-11-04 15:04:18.064 -05 [5714] STATEMENT:  cd ivanblogapp
+	;
+2023-11-04 15:04:28.840 -05 [5714] ERROR:  syntax error at or near "ivanblogapp" at character 1
+2023-11-04 15:04:28.840 -05 [5714] STATEMENT:  ivanblogapp
+	;
+2023-11-04 15:04:38.242 -05 [5714] ERROR:  syntax error at or near "ivanblogapp" at character 1
+2023-11-04 15:04:38.242 -05 [5714] STATEMENT:  ivanblogapp;
