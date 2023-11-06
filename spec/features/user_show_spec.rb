@@ -41,4 +41,17 @@ RSpec.describe 'User Show Page', type: :feature do
     visit user_path(user)
     expect(page).to have_content('Student')
   end
+
+  it 'displays the three most recent user posts' do
+    user = User.create(name: 'Kobe', bio: 'Basketball player', photo: 'https://i.blogs.es/d4590b/screenshot_113/1366_2000.jpeg')
+    post1 = Post.create(title: 'Post Title 1', text: 'Post Text 1', user: user)
+    post2 = Post.create(title: 'Post Title 2', text: 'Post Text 2', user: user)
+    post3 = Post.create(title: 'Post Title 3', text: 'Post Text 3', user: user)
+
+    visit user_path(user)
+
+    expect(page).to have_content(post3.title)
+    expect(page).to have_content(post2.text)
+    expect(page).to have_content(post1.title)
+  end
 end
