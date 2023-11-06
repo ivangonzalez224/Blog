@@ -22,7 +22,7 @@
       <div class="user-posts-container">
         <% @user.three_most_recent_post.each do |post| %>
           <div class="post-item-container">
-            <span class="post-title"><%= post.title %></span>
+            <%= link_to post.title, user_post_path(@user, post), class: "post-title" %>
             <p class="post-text"><%= post.text %></p>
             <div class="post-details">
               <div class="post-show-action">

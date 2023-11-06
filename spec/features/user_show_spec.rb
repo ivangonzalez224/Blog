@@ -64,12 +64,23 @@ RSpec.describe 'User Show Page', type: :feature do
   end
 
   it 'redirects to the see all users posts page' do
-    user = user = User.create(name: 'Ben', bio: 'Actor', photo: 'https://i.blogs.es/d4590b/screenshot_113/1366_2000.jpeg')
+    user = User.create(name: 'Ben', bio: 'Actor', photo: 'https://i.blogs.es/d4590b/screenshot_113/1366_2000.jpeg')
 
     visit user_path(user)
 
     click_link('See all posts')
 
     expect(current_path).to eq(user_posts_path(user))
+  end
+
+  it 'redirects to the post show page when clicking a user post' do
+    user = User.create(name: 'Mat', bio: 'Front end developer', photo: 'https://i.blogs.es/d4590b/screenshot_113/1366_2000.jpeg')
+    post = Post.create(title: 'Post title for testing', text: 'Post text for testing', user: user)
+
+    visit user_path(user)
+
+    click_link(post.title)
+
+    expect(current_path).to eq(user_post_path(user, post))
   end
 end
