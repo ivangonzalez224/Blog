@@ -6,7 +6,7 @@
     <div class="usersShow-container">
       <div class="userShow-header">
         <div class="userShow-image">
-          <%= image_tag @user.photo, alt: "User photo" %>
+          <%= image_tag @user.photo, alt: "User photo", class: 'user-photo' %>
         </div>
         <div class="userShow-details">
           <span id="userName"><%= @user.name %></span>
