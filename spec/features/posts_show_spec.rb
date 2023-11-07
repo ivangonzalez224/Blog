@@ -38,4 +38,10 @@ RSpec.describe 'User Post Show Page', type: feature do
     expect(like_counter).to have_content("Likes: #{like_count}")
   end
 
+  it 'displays the post body' do
+    Capybara.visit Rails.application.routes.url_helpers.user_post_path(user, post)
+    page = Capybara.page
+    expect(page).to have_content('Post Text for testing')
+  end
+
 end
