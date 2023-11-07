@@ -17,4 +17,13 @@ RSpec.describe 'User Post Show Page', type: feature do
     expect(page).to have_content('Sam')
   end
 
+  it 'displays the number of comments the post has' do
+    Capybara.visit Rails.application.routes.url_helpers.user_post_path(user, post)
+    page = Capybara.page
+    expect(page).to have_content('Comments: 0')
+    Comment.create(text: 'This is a comment for testing', post: post, user: user)
+    Capybara.visit Rails.application.routes.url_helpers.user_post_path(user, post)
+    expect(page).to have_content('Comments: 1')
+  end
+  
 end
