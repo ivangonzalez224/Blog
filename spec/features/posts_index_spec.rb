@@ -26,4 +26,12 @@ RSpec.describe 'User Posts Index Page', type: feature do
 
     expect(page).to have_content('Number of posts: 2')
   end
+
+  it 'displays a post title' do
+    post= Post.create(title: 'Post Title', text: 'Post Text', user: user)
+    Capybara.visit Rails.application.routes.url_helpers.user_posts_path(user)
+    page = Capybara.page
+
+    expect(page).to have_content('Post Title')
+  end
 end
