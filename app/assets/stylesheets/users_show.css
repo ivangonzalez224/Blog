@@ -110,7 +110,7 @@ img {
   color: #000;
 }
 
-a {
+.post-item-container a {
   text-decoration: none;
   color: #000;
   font-weight: bold;
