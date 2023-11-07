@@ -109,3 +109,15 @@ img {
   text-decoration: none;
   color: #000;
 }
+
+.post-item-container a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+.post-btn-all button {
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}

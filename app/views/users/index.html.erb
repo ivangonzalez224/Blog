@@ -8,7 +8,7 @@
         <% @users.each do |user| %>
           <div class="user-item">
             <div class="user-image">
-              <%= image_tag user.photo, alt: "User photo" %>
+              <%= image_tag user.photo, alt: "User photo", class: 'user-photo' %>
             </div>
             <div class="user-details">
               <span id="userName"><%= link_to user.name, user %></span>

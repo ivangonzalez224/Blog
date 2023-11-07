@@ -19,7 +19,7 @@
         <% @post.comments.each do |comment| %>
           <div class="postComments">
             <span><%= comment.user.name %>:</span>
-            <span><%= comment.text %></span>
+            <span class="comment-text"><%= comment.text %></span>
           </div>
         <% end %>
       </div>

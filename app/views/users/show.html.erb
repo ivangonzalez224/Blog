@@ -6,7 +6,7 @@
     <div class="usersShow-container">
       <div class="userShow-header">
         <div class="userShow-image">
-          <%= image_tag @user.photo, alt: "User photo" %>
+          <%= image_tag @user.photo, alt: "User photo", class: 'user-photo' %>
         </div>
         <div class="userShow-details">
           <span id="userName"><%= @user.name %></span>
@@ -22,7 +22,7 @@
       <div class="user-posts-container">
         <% @user.three_most_recent_post.each do |post| %>
           <div class="post-item-container">
-            <span class="post-title"><%= post.title %></span>
+            <%= link_to post.title, user_post_path(@user, post), class: "post-title" %>
             <p class="post-text"><%= post.text %></p>
             <div class="post-details">
               <div class="post-show-action">

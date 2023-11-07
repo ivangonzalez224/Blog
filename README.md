@@ -3,7 +3,7 @@
 <div align="center">
 
   <h2><b>Blog</b></h2>
-  <h4>Ivan Gonzalez</h4>
+  <h4>Ivan Gonzalez & Javier Aybar</h4>
 
 </div>
 
@@ -53,6 +53,7 @@
 - **Add Devise.**
 - **Add authorization rules.**
 - **Add API endpoints.**
+- **Add unit rspec and integration Capybara tests.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -112,6 +113,10 @@ To run tests, run the following command:
 - Twitter: [@Ivan Gonzalez](https://twitter.com/ivang2204)
 - LinkedIn: [Iván Gonzalez Robles](https://www.linkedin.com/in/iván-gonzalez-robles-957491275/)
 
+👤 **Javier Aybar**
+
+- GitHub: [@JavierAybar](https://github.com/JavierAybar)
+- LinkedIn: [@JavierAybar](https://www.linkedin.com/in/javier-aybar-932376274/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

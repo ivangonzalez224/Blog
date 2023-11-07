@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'capybara/rspec'
 
 RSpec.describe 'UsersControllers', type: :request do
   describe 'GET /users/:user_id/posts' do
