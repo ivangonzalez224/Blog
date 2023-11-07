@@ -53,5 +53,13 @@ RSpec.describe 'User Post Show Page', type: feature do
     expect(page).to have_content('Mike')
   end
 
-  
+  it 'displays the comment each commentor left in the correct place' do
+    third_user = User.create(name: 'Mike', bio: 'Software developer',
+                             photo: 'https://i.blogs.es/d4590b/screenshot_113/1366_2000.jpeg')
+    Comment.create(text: 'Comment Text for testing', post: post, user: third_user)
+    Capybara.visit Rails.application.routes.url_helpers.user_post_path(user, post)
+    page = Capybara.page
+    comment_content = page.find('.comment-text')
+    expect(comment_content).to have_content('Comment Text for testing')
+  end
 end
