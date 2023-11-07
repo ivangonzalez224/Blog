@@ -4,7 +4,7 @@ RSpec.describe 'PostsController', type: :request do
   describe 'GET #index' do
     let(:user) { User.create(name: 'Tim', photo: 'https://i.blogs.es/d4590b/screenshot_113/1366_2000.jpeg', bio: 'Test bio') }
     let(:post) { Post.create(user: user, title: 'Post for testing') }
-    
+
     it 'returns a successful response' do
       get "/users/#{user.id}/posts"
       expect(response).to have_http_status(200)
