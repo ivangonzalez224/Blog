@@ -11,4 +11,10 @@ RSpec.describe 'User Post Show Page', type: feature do
     expect(page).to have_content('Post Title for testing')
   end
 
+  it 'displays the name of the user who wrote the post' do
+    Capybara.visit Rails.application.routes.url_helpers.user_post_path(user, post)
+    page = Capybara.page
+    expect(page).to have_content('Sam')
+  end
+
 end
