@@ -72,4 +72,11 @@ RSpec.describe 'User Posts Index Page', type: feature do
 
     expect(page).to have_content('Likes: 1')
   end
+
+  it 'displays a button for pagination to see more posts' do
+    Capybara.visit Rails.application.routes.url_helpers.user_posts_path(user)
+    page = Capybara.page
+
+    expect(page).to have_selector('button', text: 'Pagination')
+  end
 end

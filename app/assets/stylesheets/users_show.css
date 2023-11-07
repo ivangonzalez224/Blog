@@ -115,3 +115,9 @@ a {
   color: #000;
   font-weight: bold;
 }
+
+.post-btn-all button {
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
