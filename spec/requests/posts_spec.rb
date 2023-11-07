@@ -2,8 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'PostsController', type: :request do
   describe 'GET #index' do
-    let(:user) { User.create(name: 'Tim', photo: 'Test photo', bio: 'Test bio') }
+    let(:user) { User.create(name: 'Tim', photo: 'https://i.blogs.es/d4590b/screenshot_113/1366_2000.jpeg', bio: 'Test bio') }
     let(:post) { Post.create(user: user, title: 'Post for testing') }
+    
     it 'returns a successful response' do
       get "/users/#{user.id}/posts"
       expect(response).to have_http_status(200)
@@ -16,7 +17,7 @@ RSpec.describe 'PostsController', type: :request do
   end
 
   describe 'GET #index' do
-    let(:user) { User.create(name: 'Tim', photo: 'Test photo', bio: 'Test bio') }
+    let(:user) { User.create(name: 'Tim', photo: 'https://i.blogs.es/d4590b/screenshot_113/1366_2000.jpeg', bio: 'Test bio') }
     let(:post) { Post.create(user: user, title: 'Post for testing') }
 
     it 'returns a successful status response' do
@@ -36,7 +37,7 @@ RSpec.describe 'PostsController', type: :request do
   end
 
   describe 'GET #show' do
-    let(:user) { User.create(name: 'Joe', photo: 'Test photo', bio: 'Test bio') }
+    let(:user) { User.create(name: 'Joe', photo: 'https://i.blogs.es/d4590b/screenshot_113/1366_2000.jpeg', bio: 'Test bio') }
     let(:post) { Post.create(user: user, title: 'Post for testing') }
     it 'returns a successful response for the show action' do
       get "/users/#{user.id}/posts/#{post.id}"

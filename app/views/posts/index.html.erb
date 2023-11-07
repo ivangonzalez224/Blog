@@ -6,7 +6,7 @@
     <div class="posts-mainContainer">
       <div class="postUser-header">
         <div class="postUser-image">
-          <img @user.photo alt="User Image">
+          <%= image_tag @user.photo, alt: "User photo", class: 'user-photo' %>
         </div>
         <div class="userShow-details">
           <span id="userName"><%= @user.name %></span>
