@@ -16,4 +16,14 @@ RSpec.describe 'User Posts Index Page', type: feature do
     
     expect(page).to have_content('Username1')
   end
+
+  it 'displays the number of posts the user has written' do
+    post1 = Post.create(title: 'Post Title 1', text: 'Post Text 1', user: user)
+    post2 = Post.create(title: 'Post Title 2', text: 'Post Text 2', user: user)
+
+    Capybara.visit Rails.application.routes.url_helpers.user_posts_path(user)
+    page = Capybara.page
+
+    expect(page).to have_content('Number of posts: 2')
+  end
 end
