@@ -25,7 +25,7 @@ RSpec.describe 'User Post Show Page', type: feature do
     Capybara.visit Rails.application.routes.url_helpers.user_post_path(user, post)
     expect(page).to have_content('Comments: 1')
   end
-  
+
   it 'displays the number of likes the post has' do
     Capybara.visit Rails.application.routes.url_helpers.user_post_path(user, post)
     page = Capybara.page
