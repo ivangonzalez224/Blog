@@ -44,4 +44,14 @@ RSpec.describe 'User Post Show Page', type: feature do
     expect(page).to have_content('Post Text for testing')
   end
 
+  it 'displays the username of each commentor' do
+    second_user = User.create(name: 'Mike', bio: 'Software developer',
+                              photo: 'https://i.blogs.es/d4590b/screenshot_113/1366_2000.jpeg')
+    Comment.create(text: 'Comment Text for testing', post: post, user: second_user)
+    Capybara.visit Rails.application.routes.url_helpers.user_post_path(user, post)
+    page = Capybara.page
+    expect(page).to have_content('Mike')
+  end
+
+  
 end
