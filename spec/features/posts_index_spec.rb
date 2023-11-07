@@ -28,7 +28,7 @@ RSpec.describe 'User Posts Index Page', type: feature do
   end
 
   it 'displays a post title' do
-    post= Post.create(title: 'Post Title', text: 'Post Text', user: user)
+    post = Post.create(title: 'Post Title', text: 'Post Text', user: user)
     Capybara.visit Rails.application.routes.url_helpers.user_posts_path(user)
     page = Capybara.page
 
@@ -36,7 +36,7 @@ RSpec.describe 'User Posts Index Page', type: feature do
   end
 
   it 'displays some of the post body' do
-    post= Post.create(title: 'Post Title', text: 'Post Text', user: user)
+    post = Post.create(title: 'Post Title', text: 'Post Text', user: user)
     Capybara.visit Rails.application.routes.url_helpers.user_posts_path(user)
     page = Capybara.page
 
@@ -44,7 +44,7 @@ RSpec.describe 'User Posts Index Page', type: feature do
   end
 
   it 'displays the first comments on a post' do
-    post= Post.create(title: 'Post Title', text: 'Post Text', user: user)
+    post = Post.create(title: 'Post Title', text: 'Post Text', user: user)
     comment1 = Comment.create(text: 'Comment Text 1', post: post, user: user)
     comment2 = Comment.create(text: 'Comment Text 2', post: post, user: user)
     Capybara.visit Rails.application.routes.url_helpers.user_posts_path(user)
@@ -55,12 +55,21 @@ RSpec.describe 'User Posts Index Page', type: feature do
   end
 
   it 'displays how many comments a post has' do
-    post= Post.create(title: 'Post Title', text: 'Post Text', user: user)
+    post = Post.create(title: 'Post Title', text: 'Post Text', user: user)
     comment1 = Comment.create(text: 'Comment Text 1', post: post, user: user)
     comment2 = Comment.create(text: 'Comment Text 2', post: post, user: user)
     Capybara.visit Rails.application.routes.url_helpers.user_posts_path(user)
     page = Capybara.page
 
     expect(page).to have_content('Comments: 2')
+  end
+
+  it 'displays how many likes a post has' do
+    post = Post.create(title: 'Post Title', text: 'Post Text', user: user)
+    like = Like.create(post: post, user: user)
+    Capybara.visit Rails.application.routes.url_helpers.user_posts_path(user)
+    page = Capybara.page
+
+    expect(page).to have_content('Likes: 1')
   end
 end
