@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "users#index"
   resources :users, only: [:index, :show] do
-    resources :posts, only: [:index, :show, :new, :create] do
-      resources :comments, only: [:new, :create]
+    resources :posts, only: [:index, :show, :new, :create, :destroy] do
+      resources :comments, only: [:new, :create, :destroy]
     end
   end
   post '/user/:user_id/posts/:post_id/likes', to: 'likes#create', as: 'user_post_likes' 

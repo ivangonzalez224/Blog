@@ -11,19 +11,31 @@
           <div class="postUser-comments">
             <span>Comments: <%= @post.comments.count %></span>
             <span>, Likes: <%= @post.likes.count %></span>
-          </div>  
+          </div>
         </div>
         <p><%= @post.text %></p>
       </div>
       <div class="postComment-container">
         <% @post.comments.each do |comment| %>
           <div class="postComments">
-            <span><%= comment.user.name %>:</span>
-            <span class="comment-text"><%= comment.text %></span>
+            <div class="comment-data-div">
+              <span><%= comment.user.name %>:</span>
+              <span class="comment-text"><%= comment.text %></span>
+            </div>
+              <% if comment.user_id == current_user.id or current_user.is?('admin') %>
+                <%= link_to 'Delete Comment', user_post_comment_path(@user, @post, comment),
+                data: {turbo_method: :delete}, class: 'delete-commentBtn' %>
+              <% end %>
           </div>
         <% end %>
       </div>
     </div>
-    <%= link_to 'Add New Comment', new_user_post_comment_path(@user, @post), class: 'add-new-btn' %>
+    <div class="bottom-btns">
+      <%= link_to 'Add New Comment', new_user_post_comment_path(@user, @post), class: 'add-new-btn' %>
+      <% if can? :destroy, @post %>
+        <%= link_to 'Delete Post', user_post_path(@user, @post),
+        data: {turbo_method: :delete}, class: 'delete' %>
+      <% end %>
+  </div>
   </div>
 </body>
