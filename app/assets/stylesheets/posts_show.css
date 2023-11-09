@@ -59,6 +59,7 @@
   justify-content: space-between;
   width: 100%;
 }
+
 .delete {
   background-color: rgb(167, 56, 19);
   color: #fff;
@@ -70,7 +71,7 @@
   align-items: center;
 }
 
-.postComments{
+.postComments {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -78,7 +79,8 @@
   border-bottom: #000 solid 1px;
   padding-bottom: 2%;
 }
-.delete-commentBtn{
+
+.delete-commentBtn {
   background-color: rgb(64, 51, 47);
   color: #fff;
   padding: 1% 3%;
