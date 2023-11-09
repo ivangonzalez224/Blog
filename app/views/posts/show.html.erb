@@ -24,6 +24,12 @@
         <% end %>
       </div>
     </div>
-    <%= link_to 'Add New Comment', new_user_post_comment_path(@user, @post), class: 'add-new-btn' %>
+    <div class="bottom-btns">
+      <%= link_to 'Add New Comment', new_user_post_comment_path(@user, @post), class: 'add-new-btn' %>
+      <% if can? :destroy, @post %>
+        <%= link_to 'Delete Post', user_post_path(@user, @post),
+        data: {turbo_method: :delete}, class: 'delete' %>
+      <% end %>
+  </div>
   </div>
 </body>
