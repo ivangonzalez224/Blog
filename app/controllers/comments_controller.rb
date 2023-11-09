@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :find_user_post
+  load_and_authorize_resource
 
   def new
     @comment = Comment.new
