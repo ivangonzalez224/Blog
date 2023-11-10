@@ -14,4 +14,13 @@ Rails.application.routes.draw do
     end
   end
   post '/user/:user_id/posts/:post_id/likes', to: 'likes#create', as: 'user_post_likes' 
+
+  namespace :api, defaults: { format: :json } do
+    resources :sessions
+    resources :users, only: [:index] do
+      resources :posts, only: [:index] do
+        resources :comments, only: [:index, :create]
+      end
+    end  
+  end
 end
